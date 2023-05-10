@@ -29,7 +29,12 @@
         </template>
       </div>
       <div class="mobile-header-menu">
-        <div class="header-menu-item-home">{{ currentMenu || "LFC" }}</div>
+        <div class="mobile-header-l">LFC</div>
+        <div class="mobile-header-c">{{ currentMenu }}</div>
+        <div class="mobile-header-r">
+          <span class="icon van-icon van-icon-menu"></span>
+          <div class="mobile-menu-list"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -184,17 +189,56 @@ export default {
     width: 100%;
     background-color: @default-bg-color;
     box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
     @media only screen and (min-width: 768px) {
       display: none;
     }
-    .header-menu-item-home {
-      text-align: center;
+    .mobile-header-l {
       line-height: 60px;
-      height: 70px;
       font-size: 35px;
       font-weight: 600;
       box-sizing: border-box;
       color: @default-active-color;
+      // position: absolute;
+      // top: 0;
+      // left: 20px;
+    }
+    .mobile-header-c {
+      line-height: 60px;
+      font-size: 18px;
+      font-weight: 600;
+      box-sizing: border-box;
+      color: @dark-text-color;
+      // margin: 0 auto;
+    }
+    .mobile-header-r {
+      // position: absolute;
+      // top: 0;
+      // right: 20px;
+      line-height: 60px;
+      .van-font {
+        font-size: 20px;
+      }
+      .mobile-menu-list {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: red;
+
+        bottom: -100px;
+        transition: height 0.2s linear;
+      }
+      &:hover {
+        .mobile-menu-list {
+          height: 100px;
+        }
+      }
     }
   }
 }
