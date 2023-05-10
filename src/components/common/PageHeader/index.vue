@@ -11,7 +11,7 @@
             }"
             :key="index"
             v-if="menu.name"
-            @click="menuClick(menu.name)"
+            @click="menuClick(menu)"
           >
             {{ menu.name }}
           </div>
@@ -38,9 +38,11 @@
 <script>
 export default {
   name: "PageHeader",
+  props: {
+    currentMenu: { type: String },
+  },
   data() {
     return {
-      currentMenu: null,
       menus: [
         { name: "EVENTS", path: "/events", cname: "事件" },
         { name: "RANKINGS", path: "/rankings", cname: "排行榜" },
@@ -67,8 +69,10 @@ export default {
   },
   methods: {
     menuClick(menu) {
-      console.log("menu:", menu);
-      this.currentMenu = menu;
+      if (!menu) {
+        this.$router.push("/");
+      }
+      this.$router.push(menu.path);
     },
     handleScroll() {
       // 获取窗口滚动距离

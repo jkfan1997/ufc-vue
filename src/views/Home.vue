@@ -4,9 +4,11 @@
     <div class="banner">
       <img
         class="banner-img"
-        src="https://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_xl_2x/s3/image/2023-04/042023-london-skyline.jpg?h=d1cb525d&itok=lNjh4Tezhttps://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_xl_2x/s3/image/2023-04/042023-london-skyline.jpg?h=d1cb525d&itok=lNjh4Tez"
+        src="/imgs/home/top-banner.jpg"
         alt=""
       />
+
+
     </div>
     <div class="event"></div>
     <div class="content">
@@ -79,9 +81,9 @@ export default {
           desc: "EVENT STREAMS LIVE ACROSS THE GLOBE EXCLUSIVELY ON RUMBLE.  FEATURED HEAVYWEIGHT TITLE MATCH: WOLVERINE (C) vs.",
         },
         {
-          label: "Announcements",
-          headline: "POWER SLAP 2 SCHEDULED FOR WEDNESDAY MAY 24 AT UFC…",
-          desc: "EVENT STREAMS.",
+          label: "啊的顺风车",
+          headline: "忽视对方后悔的身份iu回复iu说的话发蝴蝶飞哈u的护发护肤…",
+          desc: "撒付出 省的方式.",
         },
       ],
     };
@@ -207,8 +209,5 @@ export default {
       }
     }
   }
-}
-.content {
-  // height: 20000px;
 }
 </style>
