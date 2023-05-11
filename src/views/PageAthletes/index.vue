@@ -52,6 +52,9 @@ export default {
     max-width: 1220px;
     margin: 0 auto;
     padding-top: 130px;
+    @media only screen and (max-width: 768px) {
+      padding-top: 70px;
+    }
     .part {
       // background-color: #ccc;
       margin-bottom: 30px;

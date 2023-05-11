@@ -2,13 +2,7 @@
   <div class="home">
     <PageHeader />
     <div class="banner">
-      <img
-        class="banner-img"
-        src="/imgs/home/top-banner.jpg"
-        alt=""
-      />
-
-
+      <img class="banner-img" src="/imgs/home/top-banner.jpg" alt="" />
     </div>
     <div class="event"></div>
     <div class="content">

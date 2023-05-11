@@ -29,11 +29,22 @@
         </template>
       </div>
       <div class="mobile-header-menu">
-        <div class="mobile-header-l">LFC</div>
+        <div class="mobile-header-l" @click="menuClick()">LFC</div>
         <div class="mobile-header-c">{{ currentMenu }}</div>
         <div class="mobile-header-r">
           <span class="icon van-icon van-icon-menu"></span>
-          <div class="mobile-menu-list"></div>
+          <ul class="mobile-menu-list">
+            <template v-for="menu in menus">
+              <li
+                class="mobile-menu-item"
+                v-if="menu.name"
+                :key="menu.name"
+                @click="menuClick(menu)"
+              >
+                {{ menu.name }}
+              </li>
+            </template>
+          </ul>
         </div>
       </div>
     </div>
@@ -112,8 +123,13 @@ export default {
   transition: top 0.2s linear;
   @media only screen and (max-width: 768px) {
     // background-color: green;
-    top: 0;
+
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: none;
+    z-index: 9999;
   }
 
   .header-container {
@@ -203,9 +219,11 @@ export default {
       font-weight: 600;
       box-sizing: border-box;
       color: @default-active-color;
-      // position: absolute;
-      // top: 0;
-      // left: 20px;
+      width: 100px;
+      font-style: oblique;
+      &:hover {
+        cursor: pointer;
+      }
     }
     .mobile-header-c {
       line-height: 60px;
@@ -216,27 +234,37 @@ export default {
       // margin: 0 auto;
     }
     .mobile-header-r {
-      // position: absolute;
-      // top: 0;
-      // right: 20px;
+      width: 100px;
+      text-align: right;
       line-height: 60px;
       .van-font {
         font-size: 20px;
       }
       .mobile-menu-list {
         position: absolute;
-        bottom: 0;
         left: 0;
         width: 100%;
         height: 0;
-        background: red;
-
-        bottom: -100px;
-        transition: height 0.2s linear;
+        max-height: 0;
+        z-index: 9999;
+        top: 100%;
+        transition: max-height 0.3s linear;
+        overflow: hidden;
+        background: #fff;
+        .mobile-menu-item {
+          height: 60px;
+          border: 1px solid #f6f6f6;
+          text-align: center;
+          &:hover {
+            background-color: #f6f6f6;
+          }
+        }
       }
       &:hover {
+        cursor: pointer;
         .mobile-menu-list {
-          height: 100px;
+          height: auto;
+          max-height: 100vh;
         }
       }
     }
@@ -248,7 +276,7 @@ export default {
   left: 0;
   right: 0;
   transition: none;
-  z-index: 999;
+  z-index: 9999;
   // background-color: @dark-bg-color;
   /* 设置固定菜单的样式 */
   .header-container {
