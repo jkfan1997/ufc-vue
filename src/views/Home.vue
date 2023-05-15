@@ -38,14 +38,16 @@
         <div class="load-more">Load More</div>
       </div>
     </div>
+    <PageFooter />
   </div>
 </template>
 
 <script>
 import PageHeader from "@/components/common/PageHeader";
+import PageFooter from "@/components/common/PageFooter";
 export default {
   name: "Home",
-  components: { PageHeader },
+  components: { PageHeader, PageFooter },
   data() {
     return {
       cardDatas: [

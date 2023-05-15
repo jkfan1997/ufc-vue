@@ -9,7 +9,7 @@
             <div class="item-l">
               <img
                 class="img"
-                :src="`/imgs/playersImg/liverpool/${player.number}.jpg`"
+                :src="`/imgs/playersImg/liverpool/${player.number}.png`"
                 alt=""
               />
             </div>
@@ -29,15 +29,17 @@
         </div>
       </div>
     </div>
+    <PageFooter />
   </div>
 </template>
 
 <script>
 import PageHeader from "@/components/common/PageHeader";
+import PageFooter from "@/components/common/PageFooter";
 import { TEAM_DATA } from "./config/team.config";
 export default {
   name: "Athletes",
-  components: { PageHeader },
+  components: { PageHeader, PageFooter },
   data() {
     return {
       team: TEAM_DATA,
@@ -47,11 +49,13 @@ export default {
 </script>
 <style lang="less" scoped>
 .athletes {
+  height: 100%;
   .main {
     width: 100%;
     max-width: 1220px;
     margin: 0 auto;
     padding-top: 130px;
+    min-height: 100%;
     @media only screen and (max-width: 768px) {
       padding-top: 70px;
     }
@@ -88,13 +92,18 @@ export default {
           position: relative;
           height: 180px;
           border-bottom: 1x solid #f6f6f6;
+          background-color: #eaeaea;
+          background-image: url(/imgs/playersImg/liverpool/bg.png);
+          background-position: 100% 0;
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          overflow: hidden;
           .item-l {
             position: absolute;
             bottom: 0;
             right: 0;
             // width: 50%;
             height: calc(100% - 35px);
-            overflow: hidden;
             .img {
               height: 100%;
               object-fit: cover;
@@ -102,7 +111,7 @@ export default {
           }
           &:hover {
             cursor: pointer;
-            background-color: #f6f6f6;
+            // background-color: #f6f6f6;
             .item-l {
               .img {
                 transform: scale(1.1); /* 鼠标悬停时将图片放大1.1倍 */

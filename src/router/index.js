@@ -5,6 +5,7 @@ import Events from "../views/PageEvents";
 import Rankings from "../views/PageRankings";
 import Athletes from "../views/PageAthletes";
 import News from "../views/PageNews";
+import Clubs from "../views/PageClubs";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/news",
     name: "News",
     component: News,
+  },
+  {
+    path: "/clubs",
+    name: "Clubs",
+    component: Clubs,
   },
 ];
 

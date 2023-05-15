@@ -65,12 +65,13 @@ export default {
         { name: "ATHLETES", path: "/athletes", cname: "运动员" },
         { name: "NEWS", path: "/news", cname: "新闻" },
         {},
-        { name: "UFC 30TH", path: "/ufc-30th", cname: "UFC-30年" },
+        { name: "CLUBS", path: "/clubs", cname: "俱乐部" },
         { name: "CONNECT", path: "/connect", cname: "链接" },
         { name: "WATCH", path: "/watch", cname: "观察" },
         { name: "SHOP", path: "/shop", cname: "商店" },
       ],
       fixed: false,
+      menuHeight: 0,
     };
   },
   mounted() {
@@ -111,19 +112,23 @@ export default {
 // @dark-text-color: #000;
 // @activeColor: #d20a0a;
 @default-bg-color: #fff;
-@dark-bg-color: #d20a0a;
+@dark-bg-color: #000;
 @default-text-color: #fff;
 @dark-text-color: #000;
 @default-active-color: #d20a0a;
 @dark-active-color: #fff;
+// @default-bg-color: #fff;
+// @dark-bg-color: #d20a0a;
+// @default-text-color: #fff;
+// @dark-text-color: #000;
+// @default-active-color: #d20a0a;
+// @dark-active-color: #fff;
 .page-header {
   width: 100%;
   position: absolute;
   top: 40px;
   transition: top 0.2s linear;
   @media only screen and (max-width: 768px) {
-    // background-color: green;
-
     position: fixed;
     top: 0;
     left: 0;
